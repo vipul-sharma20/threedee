@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "threedee"
+version = "0.1.0"
+description = "3D printing utility CLI"
+authors = ["Vipul Sharma <vipul.sharma20@gmail.com>"]
+license = "Apache License, Version 2.0"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+numpy-stl = "^3.1.1"
+docopt = "^0.6.2"
+
+[tool.poetry.scripts]
+threedee = "threedee.cli:main"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
