@@ -8,7 +8,7 @@ Utility tool to work with some common STL modification recipes.
 ## Installation
 
 ```
-pip install https://github.com/vipul-sharma20/threedee/releases/download/v0.1.0/threedee-0.1.0-py3-none-any.whl
+pip install https://github.com/vipul-sharma20/threedee/releases/download/v0.2.0/threedee-0.2.0-py3-none-any.whl
 ```
 
 ## Usage

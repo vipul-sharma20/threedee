@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "threedee"
-version = "0.1.0"
+version = "0.2.0"
 description = "3D printing utility CLI"
 authors = ["Vipul Sharma <vipul.sharma20@gmail.com>"]
 license = "Apache License, Version 2.0"
