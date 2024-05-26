@@ -27,17 +27,20 @@ def adjust_model_positions(models, max_dims, width):
     return models
 
 
-def trim_edges(mesh, trim_size):
+def trim_edges(mesh, trim_size, trim_bottom):
     """
     Trim edges of the mesh by a specified size in millimeters.
     """
     # Calculate the min and max for trimming
     min_x, max_x = np.min(mesh.x), np.max(mesh.x)
     min_y, max_y = np.min(mesh.y), np.max(mesh.y)
+    min_z, max_z = np.min(mesh.z), np.max(mesh.z)
 
     # Adjust vertices by trim size
     mesh.x = np.clip(mesh.x, min_x + trim_size, max_x - trim_size)
     mesh.y = np.clip(mesh.y, min_y + trim_size, max_y - trim_size)
+    mesh.z = np.clip(mesh.z, min_z + trim_bottom, max_z)
+
     return mesh
 
 
@@ -74,6 +77,7 @@ def combine_skyline(**args):
 
     # Trim the edges (4.5 mm)
     trim_size = 4.5
-    combined_mesh = trim_edges(combined_mesh, trim_size)
+    trim_bottom = 5
+    combined_mesh = trim_edges(combined_mesh, trim_size, trim_bottom)
 
     combined_mesh.save("./combined_skyline.stl")
